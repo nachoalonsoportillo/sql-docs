@@ -59,7 +59,7 @@ You configure the Scale Out Master service by using the `<drive>:\Program Files\
 
 ## View the Scale Out Master service log
 
-The Scale Out Master service log file is located in the `<drive>:\Users\[account]\AppData\Local\SSIS\ScaleOut\Master` folder. 
+The Scale Out Master service log file is located in the `<drive>:\Users\[account]\AppData\Local\SSIS\ScaleOut\Master` folder. However, for Service accounts the equivalent folder is  `%SYSTEMROOT%\ServiceProfiles\[account]\AppData\Local\SSIS\ScaleOut\Master`.
 
 The *[account]* parameter refers to the account running the Scale Out Master service. By default, this account is `SSISScaleOutMaster140`.
 
