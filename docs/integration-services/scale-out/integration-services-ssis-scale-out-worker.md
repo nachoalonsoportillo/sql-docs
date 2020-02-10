@@ -51,9 +51,9 @@ You can configure the Scale Out Worker service by using the `\<drive\>:\Program 
 ||||    
 
 ## View the Scale Out Worker log
-The log file of the Scale Out Worker service is in the `\<drive\>:\Users\\[account]\AppData\Local\SSIS\ScaleOut\Agent` folder.
+The log file of the Scale Out Worker service is in the `\<drive\>:\Users\\[account]\AppData\Local\SSIS\ScaleOut\Agent` folder. However, for Service accounts the equivalent folder is  `%SYSTEMROOT%\ServiceProfiles\[account]\AppData\Local\SSIS\ScaleOut\Agent`.
 
-The log location of each individual task is configured in the `WorkerSettings.config` file in the `TasksRootFolder`. If a value is not specified, the log is in the `\<drive\>:\Users\\[account]\AppData\Local\SSIS\ScaleOut\Tasks` folder. 
+The log location of each individual task is configured in the `WorkerSettings.config` file in the `TasksRootFolder`. If a value is not specified, and the Worker service is run by a regular Windows account, the log is in the `\<drive\>:\Users\\[account]\AppData\Local\SSIS\ScaleOut\Tasks` folder; but if it is run by a Service account, the log is in  `%SYSTEMROOT%\ServiceProfiles\[account]\AppData\Local\SSIS\ScaleOut\Tasks`. 
 
 The *[account]* parameter is the account running the Scale Out Worker service. By default, the account is `SSISScaleOutWorker140`.
 
